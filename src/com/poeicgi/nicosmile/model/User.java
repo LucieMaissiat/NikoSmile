@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import com.poeicgi.nicosmile.model.base.Security;
 
 public class User extends Security{
+	
 	public static final String TABLE = "utilisateur";
 	
 	private String lastName;
@@ -12,21 +13,27 @@ public class User extends Security{
 	private String registrationCGI;
 	private ArrayList<Project> projects;
 	private ArrayList<NikoNiko> nikos;
+	
 	public String getLastName() {
 		return lastName;
 	}
+	
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
 	}
+	
 	public String getFirstName() {
 		return firstName;
 	}
+	
 	public void setFirstName(String firstName) {
 		this.firstName = firstName;
 	}
+	
 	public String getRegistrationCGI() {
 		return registrationCGI;
 	}
+	
 	public void setRegistrationCGI(String registrationCGI) {
 		this.registrationCGI = registrationCGI;
 	}
@@ -34,12 +41,15 @@ public class User extends Security{
 	public ArrayList<Project> getProjects() {
 		return projects;
 	}
+	
 	public void setProjects(ArrayList<Project> projects) {
 		this.projects = projects;
 	}
+	
 	public ArrayList<NikoNiko> getNikos() {
 		return nikos;
 	}
+	
 	public void setNikos(ArrayList<NikoNiko> nikos) {
 		this.nikos = nikos;
 	}

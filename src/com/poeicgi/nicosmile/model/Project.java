@@ -11,39 +11,53 @@ public class Project extends ModelBase{
 	private String name;
 	private Date startDate;
 	private Date endDate;
+	private Boolean isAnonymous;
 	private ArrayList<User> team;
-	private ArrayList<NikoNiko> nikos;
+	
 	public String getName() {
 		return name;
 	}
+	
 	public void setName(String name) {
 		this.name = name;
 	}
+	
 	public Date getStartDate() {
 		return startDate;
 	}
+	
 	public void setStartDate(Date startDate) {
 		this.startDate = startDate;
 	}
+	
 	public Date getEndDate() {
 		return endDate;
 	}
+	
 	public void setEndDate(Date endDate) {
 		this.endDate = endDate;
 	}
+
+	public Boolean getIsAnonymous() {
+		if (this.isAnonymous==null) {
+			this.isAnonymous=true;
+		}
+		return isAnonymous;
+	}
+
+	public void setIsAnonymous(Boolean isAnonymous) {
+		this.isAnonymous = isAnonymous;
+	}
+
 	public ArrayList<User> getTeam() {
 		return team;
 	}
-	public void setTeams(ArrayList<User> team) {
+	
+	public void setTeam(ArrayList<User> team) {
 		this.team = team;
 	}
-	public ArrayList<NikoNiko> getNikos() {
-		return nikos;
-	}
-	public void setNikos(ArrayList<NikoNiko> nikos) {
-		this.nikos = nikos;
-	}
-	public Project(String name, ArrayList<User> team) {
+	
+		public Project(String name, ArrayList<User> team) {
 		super();
 		this.name = name;
 		this.startDate = new Date();
@@ -51,7 +65,6 @@ public class Project extends ModelBase{
 		for (User user : team) {
 			user.getProjects().add(this);
 		}
-		this.nikos = new ArrayList<NikoNiko>();
 	}
 	
 	

@@ -1,4 +1,4 @@
-package com.poeicgi.nicosmile.model;
+package com.poeicgi.nicosmile.utils;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -8,12 +8,13 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 import com.poeicgi.nicosmile.database.MySQLAccess;
+import com.poeicgi.nicosmile.model.NikoNiko;
+import com.poeicgi.nicosmile.model.User;
 
 public abstract class Fonction {
 
-	
-	public static void printNikosProject(Project project) {
-		for (NikoNiko niko : project.getNikos()) {
+	public static void printNikosUser(User user) {
+		for (NikoNiko niko : user.getNikos()) {
 			ArrayList<Integer> test = new ArrayList<Integer>();
 			test.add(1);
 			test.add(0);
@@ -40,10 +41,10 @@ public abstract class Fonction {
 		
 	}
 	
-	public static void printStatNikosProject(Project project){
+	public static void printStatNikosUser(User user){
 		float moyenne=0;
 		int countNikos=0;
-		for (NikoNiko niko : project.getNikos()) {
+		for (NikoNiko niko : user.getNikos()) {
 			
 			moyenne=moyenne + niko.getSatisfaction();
 			countNikos++;
@@ -78,11 +79,11 @@ public abstract class Fonction {
 					if (!input1.equals("")){
 						
 						NikoNiko tempNiko = new NikoNiko( Integer.parseInt(input), input1);
-						String update = "INSERT INTO avis (avis_journee,texte_jour, is_anonymous) VALUES (" + tempNiko.getSatisfaction() + ", \"" + tempNiko.getCommentSat() + "\", " + tempNiko.getIsAnonymous() + ");" ; 
+						String update = "INSERT INTO avis (avis_journee,texte_jour, is_anonymous) VALUES (" + tempNiko.getSatisfaction() + ", \"" + tempNiko.getCommentSat() + "\");" ; 
 						instance.updateQuery(update);
 					}else {
 						NikoNiko tempNiko = new NikoNiko(Integer.parseInt(input));
-						String update = "INSERT INTO avis (avis_journee,  is_anonymous) VALUES (" + tempNiko.getSatisfaction() + ", " + tempNiko.getIsAnonymous() + ");" ; 
+						String update = "INSERT INTO avis (avis_journee,  is_anonymous) VALUES (" + tempNiko.getSatisfaction() + ");" ; 
 						instance.updateQuery(update);
 					}
 					
@@ -108,7 +109,6 @@ public abstract class Fonction {
 		try {
 			rsmd = rs.getMetaData();
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		   System.out.println("querying " +select );
@@ -116,7 +116,6 @@ public abstract class Fonction {
 		try {
 			columnsNumber = rsmd.getColumnCount();
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		   try {
@@ -129,7 +128,6 @@ public abstract class Fonction {
 			       System.out.println("");
 			   }
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
