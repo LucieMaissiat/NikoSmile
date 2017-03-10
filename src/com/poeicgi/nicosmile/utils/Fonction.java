@@ -7,7 +7,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-import com.poeicgi.nicosmile.database.MySQLAccess;
+import com.poeicgi.nicosmile.config.MySQLAccess;
 import com.poeicgi.nicosmile.model.NikoNiko;
 import com.poeicgi.nicosmile.model.User;
 

@@ -2,9 +2,9 @@ package com.poeicgi.nicosmile.model;
 
 import java.util.ArrayList;
 
-import com.poeicgi.nicosmile.model.base.Security;
+import com.poeicgi.nicosmile.model.security.SecurityUser;
 
-public class User extends Security{
+public class User extends SecurityUser{
 	
 	public static final String TABLE = "utilisateur";
 	

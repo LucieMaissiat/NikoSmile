@@ -1,4 +1,4 @@
-package com.poeicgi.nicosmile.model.base;
+package com.poeicgi.nicosmile.model.modelbase;
 
 public class ModelBase {
 	private int id ;

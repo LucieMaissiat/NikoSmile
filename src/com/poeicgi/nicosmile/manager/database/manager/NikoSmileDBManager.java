@@ -1,9 +1,9 @@
-package com.poeicgi.nicosmile.database.manager;
+package com.poeicgi.nicosmile.manager.database.manager;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import com.poeicgi.nicosmile.database.MySQLAccess;
+import com.poeicgi.nicosmile.config.MySQLAccess;
 import com.poeicgi.nicosmile.model.NikoNiko;
 import com.poeicgi.nicosmile.model.User;
 import com.poeicgi.nicosmile.utils.DateConverter;

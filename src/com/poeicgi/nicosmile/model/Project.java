@@ -3,7 +3,7 @@ package com.poeicgi.nicosmile.model;
 import java.util.ArrayList;
 import java.util.Date;
 
-import com.poeicgi.nicosmile.model.base.ModelBase;
+import com.poeicgi.nicosmile.model.modelbase.ModelBase;
 
 public class Project extends ModelBase{
 	public static final String TABLE = "projet";

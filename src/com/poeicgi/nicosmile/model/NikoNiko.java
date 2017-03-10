@@ -6,7 +6,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 
-import com.poeicgi.nicosmile.model.base.ModelBase;
+import com.poeicgi.nicosmile.model.modelbase.ModelBase;
 import com.poeicgi.nicosmile.utils.Fonction;
 
 public class NikoNiko extends ModelBase {
