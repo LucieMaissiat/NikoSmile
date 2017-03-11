@@ -119,5 +119,7 @@ public class User extends SecurityUser{
 		this.avis = new ArrayList<Avis>();
 		this.projects = new ArrayList<Project>();
 	}
+	
+	
 
 }
