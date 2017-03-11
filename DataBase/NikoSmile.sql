@@ -28,8 +28,11 @@ CREATE TABLE projet(
         id             int (11) Auto_increment  NOT NULL ,
         nom_projet     Varchar (25) NOT NULL,
         Chef_de_projet Varchar (25) ,
+        verticale      Varchar (25) ,
         date_debut     Datetime NOT NULL,
         date_fin       Datetime ,
+        anonyme        boolean NOT NULL,
+        cache          boolean NOT NULL,
         PRIMARY KEY (id )
 )ENGINE=InnoDB;
 
@@ -44,7 +47,6 @@ CREATE TABLE avis(
         date_jour      Datetime NOT NULL,
         texte_jour     Varchar (200) ,
         date_modif     Datetime ,
-        is_anonymous   boolean NOT NULL,
         id_utilisateur Int ,
         id_projet      Int ,
         PRIMARY KEY (id )

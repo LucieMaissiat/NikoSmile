@@ -3,7 +3,7 @@ package com.poeicgi.nicosmile.manager.database.manager;
 import java.util.ArrayList;
 
 import com.poeicgi.nicosmile.manager.database.manager.base.BaseDBManager;
-import com.poeicgi.nicosmile.model.NikoNiko;
+import com.poeicgi.nicosmile.model.Avis;
 import com.poeicgi.nicosmile.model.Project;
 
 public class ProjetDBManager extends BaseDBManager<Project> {

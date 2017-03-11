@@ -10,5 +10,6 @@ public enum MySQLTypes {
 	TEXT,
 	DATABASE_ITEM,
 	ASSOCIATION,
-	CHAR
+	CHAR,
+	BOOLEAN
 }

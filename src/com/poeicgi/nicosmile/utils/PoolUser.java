@@ -47,7 +47,7 @@ public class PoolUser {
 			}
 			lastname = familyName.getList().get((int) ((Math.random() * familyName.getList().size()) + 1));
 
-			User user = new User(firstname, lastname, sex);
+			User user = new User(firstname, lastname);
 			list.add(user);
 
 		}

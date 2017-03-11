@@ -4,7 +4,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import com.poeicgi.nicosmile.config.MySQLAccess;
-import com.poeicgi.nicosmile.model.NikoNiko;
+import com.poeicgi.nicosmile.model.Avis;
 import com.poeicgi.nicosmile.model.User;
 import com.poeicgi.nicosmile.utils.DateConverter;
 

@@ -3,10 +3,10 @@ package com.poeicgi.nicosmile.manager.database.manager;
 import java.util.ArrayList;
 
 import com.poeicgi.nicosmile.manager.database.manager.base.BaseDBManager;
-import com.poeicgi.nicosmile.model.NikoNiko;
+import com.poeicgi.nicosmile.model.Avis;
 import com.poeicgi.nicosmile.utils.DateConverter;
 
-public class AvisDBManager extends BaseDBManager<NikoNiko> {
+public class AvisDBManager extends BaseDBManager<Avis> {
 
 	@Override
 	public void purgeTable(String table) {
@@ -34,36 +34,36 @@ public class AvisDBManager extends BaseDBManager<NikoNiko> {
 //		return null;
 //	}
 
-	public ArrayList<NikoNiko> getAll() {
+	public ArrayList<Avis> getAll() {
 		AvisDBManager niko = new AvisDBManager();
-		return niko.getAll(NikoNiko.class);
+		return niko.getAll(Avis.class);
 	}
 
 	// Fonction qui permet l'ajout des attributs d'un nikoniko dans la BDD
 	// en utilisant la fonction getNikoNikoValues().
 
 	@Override
-	public void delete(NikoNiko item) {
+	public void delete(Avis item) {
 		// TODO Auto-generated method stub
 	}
 
 	@Override
-	public void update(NikoNiko item) {
+	public void update(Avis item) {
 		// TODO Auto-generated method stub
 	}
 
 	@Override
-	public <O> void mapRelation(NikoNiko item, O relation) {
+	public <O> void mapRelation(Avis item, O relation) {
 		// TODO Auto-generated method stub
 	}
 
 	@Override
-	public void updateWithChildren(NikoNiko item) {
+	public void updateWithChildren(Avis item) {
 		// TODO Auto-generated method stub
 	}
 
 	@Override
-	public <O> void updateChildren(NikoNiko item, O sampleChild) {
+	public <O> void updateChildren(Avis item, O sampleChild) {
 		// TODO Auto-generated method stub
 	}
 

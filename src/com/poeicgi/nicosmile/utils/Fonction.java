@@ -8,13 +8,13 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 import com.poeicgi.nicosmile.config.MySQLAccess;
-import com.poeicgi.nicosmile.model.NikoNiko;
+import com.poeicgi.nicosmile.model.Avis;
 import com.poeicgi.nicosmile.model.User;
 
 public abstract class Fonction {
 
 	public static void printNikosUser(User user) {
-		for (NikoNiko niko : user.getNikos()) {
+		for (Avis niko : user.getAvis()) {
 			ArrayList<Integer> test = new ArrayList<Integer>();
 			test.add(1);
 			test.add(0);
@@ -44,7 +44,7 @@ public abstract class Fonction {
 	public static void printStatNikosUser(User user){
 		float moyenne=0;
 		int countNikos=0;
-		for (NikoNiko niko : user.getNikos()) {
+		for (Avis niko : user.getAvis()) {
 			
 			moyenne=moyenne + niko.getSatisfaction();
 			countNikos++;
@@ -78,11 +78,11 @@ public abstract class Fonction {
 					String input1 = br.readLine();
 					if (!input1.equals("")){
 						
-						NikoNiko tempNiko = new NikoNiko( Integer.parseInt(input), input1);
+						Avis tempNiko = new Avis( Integer.parseInt(input), input1);
 						String update = "INSERT INTO avis (avis_journee,texte_jour, is_anonymous) VALUES (" + tempNiko.getSatisfaction() + ", \"" + tempNiko.getCommentSat() + "\");" ; 
 						instance.updateQuery(update);
 					}else {
-						NikoNiko tempNiko = new NikoNiko(Integer.parseInt(input));
+						Avis tempNiko = new Avis(Integer.parseInt(input));
 						String update = "INSERT INTO avis (avis_journee,  is_anonymous) VALUES (" + tempNiko.getSatisfaction() + ");" ; 
 						instance.updateQuery(update);
 					}
