@@ -34,10 +34,8 @@ public class Project extends DataBaseItem{
 	@MySQLAnnotation(fieldName = "cache", mysqlType = MySQLTypes.BOOLEAN, nullable = true)
 	private Boolean isHidden;
 	
-	@MySQLAnnotation(fieldName = "id", mysqlType = MySQLTypes.ASSOCIATION,
+	@MySQLAnnotation(fieldName = "id_projet", mysqlType = MySQLTypes.ASSOCIATION,
 			associationTable = "equipe", nullable = true)
-	private ArrayList<Project> projects;
-
 	private ArrayList<User> team;
 	
 	public String getProjectLeader() {
