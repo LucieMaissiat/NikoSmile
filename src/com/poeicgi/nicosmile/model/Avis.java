@@ -17,7 +17,7 @@ public class Avis extends DataBaseItem {
 	
 	public static final String TABLE = "avis";
 	public static final String[] FIELDS = { "id", "avis_journee", "date_jour", "texte_jour", "date_modif",
-			"is_anonymous", "id_utilisateur", "id_project" };
+											"id_utilisateur"};
 	
 	
 	@MySQLAnnotation(fieldName = "satisfaction", mysqlType = MySQLTypes.INT)
@@ -32,14 +32,8 @@ public class Avis extends DataBaseItem {
 	@MySQLAnnotation(fieldName = "change_Date", mysqlType = MySQLTypes.DATETIME, nullable = true)
 	private ArrayList<Date> changeDates;
 	
-	@MySQLAnnotation(fieldName = "isanonymous", mysqlType = MySQLTypes.TINYINT)
-	private Boolean isAnonymous;
-	
 	@MySQLAnnotation(fieldName = "id_User",mysqlType = MySQLTypes.DATABASE_ITEM, nullable = true)
 	private User user;
-	
-	@MySQLAnnotation(fieldName = "id_Project",mysqlType = MySQLTypes.DATABASE_ITEM, nullable = true)
-	private Project project;
 
 	
 	public Date getLogDate() {
@@ -89,22 +83,6 @@ public class Avis extends DataBaseItem {
 	public void setUser(User user) {
 		this.user = user;
 	}
-	
-	public Boolean getIsAnonymous() {
-		return isAnonymous;
-	}
-
-	public void setIsAnonymous(Boolean isAnonymous) {
-		this.isAnonymous = isAnonymous;
-	}
-
-	public Project getProject() {
-		return project;
-	}
-
-	public void setProject(Project project) {
-		this.project = project;
-	}
 
 	public Avis(String logDate, int satisfaction, User user) {
 		super();
@@ -147,7 +125,6 @@ public class Avis extends DataBaseItem {
 	public Avis(User user, Project project, int satisfaction) {
 		this();
 		this.user = user;
-		this.project = project;
 		this.setSatisfaction(satisfaction);
 		this.logDate = new Date();
 		this.user.getAvis().add(this);
@@ -158,18 +135,6 @@ public class Avis extends DataBaseItem {
 		this.commentSat = comment;
 	}
 
-	public Avis(User user, Project project, int satisfaction, Boolean isAnonymous) {
-		this(user, project, satisfaction);
-		this.isAnonymous = isAnonymous;
-	}
-
-	public Avis(User user, Project project, int satisfaction,
-			String comment, Boolean isAnonymous) {
-		this(user, project, satisfaction);
-		this.commentSat = comment;
-		this.isAnonymous = isAnonymous;
-	}
-
 	public Avis() {
 		super(Avis.TABLE, Avis.FIELDS);
 	}
@@ -178,7 +143,7 @@ public class Avis extends DataBaseItem {
 	public String toString() {
 		return "Avis [log_date=" + logDate + ", change_date="
 				+ changeDates + ", satisfaction=" + satisfaction + ", comment="
-				+ commentSat + ", isAnonymous=" + isAnonymous + "]";
+				+ commentSat + "]";
 	}
 
 }

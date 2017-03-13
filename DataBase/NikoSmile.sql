@@ -48,7 +48,6 @@ CREATE TABLE avis(
         texte_jour     Varchar (200) ,
         date_modif     Datetime ,
         id_utilisateur Int ,
-        id_projet      Int ,
         PRIMARY KEY (id )
 )ENGINE=InnoDB;
 
